@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="353b5673-c0fb-4f74-9af9-8ab4ec5974ba" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1292/GeoService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GeoService.disco" MetadataType="Disco" ID="c0a22956-6432-4e96-85a1-29bc1f7aeac3" SourceId="1" SourceUrl="http://localhost:1292/GeoService.svc?disco" />
+    <MetadataFile FileName="GeoService.xsd" MetadataType="Schema" ID="5ad4fb59-0544-4e28-9d70-36f7082c0bdd" SourceId="1" SourceUrl="http://localhost:1292/GeoService.svc?xsd=xsd2" />
+    <MetadataFile FileName="GeoService.wsdl" MetadataType="Wsdl" ID="333db1e7-202f-4f08-97a5-bc24aa0dd275" SourceId="1" SourceUrl="http://localhost:1292/GeoService.svc?wsdl" />
+    <MetadataFile FileName="GeoService1.xsd" MetadataType="Schema" ID="122e154a-b1d6-4b47-9f51-10de26c22d51" SourceId="1" SourceUrl="http://localhost:1292/GeoService.svc?xsd=xsd0" />
+    <MetadataFile FileName="GeoService2.xsd" MetadataType="Schema" ID="b3d9436f-0004-4772-a86c-412d2ffe0fe0" SourceId="1" SourceUrl="http://localhost:1292/GeoService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

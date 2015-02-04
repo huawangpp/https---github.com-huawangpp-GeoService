@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoService", "WcfService3\GeoService.csproj", "{6FF1C1FD-AF0A-4015-999D-821520462F69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientTest", "ClientTest\ClientTest.csproj", "{3D966D7D-7F4A-463B-AD42-D1AD1DBBE104}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6FF1C1FD-AF0A-4015-999D-821520462F69} = {6FF1C1FD-AF0A-4015-999D-821520462F69}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6FF1C1FD-AF0A-4015-999D-821520462F69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FF1C1FD-AF0A-4015-999D-821520462F69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FF1C1FD-AF0A-4015-999D-821520462F69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FF1C1FD-AF0A-4015-999D-821520462F69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D966D7D-7F4A-463B-AD42-D1AD1DBBE104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D966D7D-7F4A-463B-AD42-D1AD1DBBE104}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D966D7D-7F4A-463B-AD42-D1AD1DBBE104}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D966D7D-7F4A-463B-AD42-D1AD1DBBE104}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
