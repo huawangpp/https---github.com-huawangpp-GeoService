@@ -47,8 +47,8 @@ namespace Uber.Core
         }
 
         private void divide()
-        { 
-
+        {
+            this.NorthWest = new TreeNode();
         }
 
     }
