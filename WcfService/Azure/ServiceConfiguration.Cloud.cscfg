@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="Azure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2013-03.2.0">
+  <Role name="GeoService">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=alokp;AccountKey=ffySTqSZRvc5LVdfvJwX0V3lRJnkCF7agd1gLxr11krIcuR8sGXwHFctcdkebDsP4NAloDLIy69I6s0frytWIA==" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="mylogin" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEC/U6b/Px6iYQ5ZoU+lRAHMwDQYJKoZIhvcNAQEBBQAEggEAg5Tpo8KSvE0HrEY6KgrYx6ChTiyd9tBZLHgYZUhCjB9uRGwu3CmTksZf+TOhKcn2dmop3D1ICWdILXfB9Sn7jt8uaOM+HxjX8NSkNx6PLUnXouWHsiJjkO7vXiLGTwh6BGchQUmwtwYWVk1bJa9Akbd3AhWikrOgSGsQ7/UfeguYKfo0aX/XZHmk4UL+AWDedx8QKwdkS6P+iAZsLO5LICmlNq9t9YYrqkLbJMYfd2wNA/2aLuBsM7o0ph0pVHZsEcr0taycXytRwWjhZeQmxNi+L8Y46pNe49TARjfJ//DSRC6cLoMgix0ltlTlo1pTsOUX1NSBc2NSHEsFLPTamjAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECFwFXifJxR6VgBDP9vel1lYyqrIQBdpua0DK" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2016-02-14T23:59:59.0000000-08:00" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="8C60BD7792EDE57340D685C1CBDA45A2AAD97324" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+</ServiceConfiguration>

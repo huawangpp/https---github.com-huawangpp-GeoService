@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientTest", "ClientTest\Cl
 		{6FF1C1FD-AF0A-4015-999D-821520462F69} = {6FF1C1FD-AF0A-4015-999D-821520462F69}
 	EndProjectSection
 EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "Azure", "Azure\Azure.ccproj", "{1774B106-5913-48E7-9430-8A6344B91B03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +24,10 @@ Global
 		{3D966D7D-7F4A-463B-AD42-D1AD1DBBE104}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D966D7D-7F4A-463B-AD42-D1AD1DBBE104}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D966D7D-7F4A-463B-AD42-D1AD1DBBE104}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1774B106-5913-48E7-9430-8A6344B91B03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1774B106-5913-48E7-9430-8A6344B91B03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1774B106-5913-48E7-9430-8A6344B91B03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1774B106-5913-48E7-9430-8A6344B91B03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

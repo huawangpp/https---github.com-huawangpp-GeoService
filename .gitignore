@@ -44,3 +44,8 @@ Temporary Items
 
 bin/
 obj/
+*.dll
+*.exe
+Release/
+Debug/
+packages/
