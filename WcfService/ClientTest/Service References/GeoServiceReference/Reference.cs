@@ -15,126 +15,6 @@ namespace ClientTest.GeoServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Region", Namespace="http://schemas.datacontract.org/2004/07/Uber.Base")]
-    [System.SerializableAttribute()]
-    public partial struct Region : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientTest.GeoServiceReference.Location bottomrightField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientTest.GeoServiceReference.Location topleftField;
-        
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientTest.GeoServiceReference.Location bottomright {
-            get {
-                return this.bottomrightField;
-            }
-            set {
-                if ((this.bottomrightField.Equals(value) != true)) {
-                    this.bottomrightField = value;
-                    this.RaisePropertyChanged("bottomright");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientTest.GeoServiceReference.Location topleft {
-            get {
-                return this.topleftField;
-            }
-            set {
-                if ((this.topleftField.Equals(value) != true)) {
-                    this.topleftField = value;
-                    this.RaisePropertyChanged("topleft");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Location", Namespace="http://schemas.datacontract.org/2004/07/Uber.Base")]
-    [System.SerializableAttribute()]
-    public partial struct Location : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double latField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double lngField;
-        
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double lat {
-            get {
-                return this.latField;
-            }
-            set {
-                if ((this.latField.Equals(value) != true)) {
-                    this.latField = value;
-                    this.RaisePropertyChanged("lat");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double lng {
-            get {
-                return this.lngField;
-            }
-            set {
-                if ((this.lngField.Equals(value) != true)) {
-                    this.lngField = value;
-                    this.RaisePropertyChanged("lng");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="TripData", Namespace="http://schemas.datacontract.org/2004/07/Uber.Base")]
     [System.SerializableAttribute()]
     public partial class TripData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -263,22 +143,22 @@ namespace ClientTest.GeoServiceReference {
     public interface IGeoService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGeoService/GetTripCountInTime", ReplyAction="http://tempuri.org/IGeoService/GetTripCountInTimeResponse")]
-        int GetTripCountInTime(ulong epoch);
+        int GetTripCountInTime(string epoch);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGeoService/GetTripCountInTime", ReplyAction="http://tempuri.org/IGeoService/GetTripCountInTimeResponse")]
-        System.Threading.Tasks.Task<int> GetTripCountInTimeAsync(ulong epoch);
+        System.Threading.Tasks.Task<int> GetTripCountInTimeAsync(string epoch);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGeoService/GetTripCountInRegion", ReplyAction="http://tempuri.org/IGeoService/GetTripCountInRegionResponse")]
-        int GetTripCountInRegion(ClientTest.GeoServiceReference.Region r);
+        int GetTripCountInRegion(double l, double t, double r, double b);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGeoService/GetTripCountInRegion", ReplyAction="http://tempuri.org/IGeoService/GetTripCountInRegionResponse")]
-        System.Threading.Tasks.Task<int> GetTripCountInRegionAsync(ClientTest.GeoServiceReference.Region r);
+        System.Threading.Tasks.Task<int> GetTripCountInRegionAsync(double l, double t, double r, double b);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGeoService/GetTripSum", ReplyAction="http://tempuri.org/IGeoService/GetTripSumResponse")]
-        double GetTripSum(ClientTest.GeoServiceReference.Region r);
+        decimal GetTripSum(double l, double t, double r, double b);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGeoService/GetTripSum", ReplyAction="http://tempuri.org/IGeoService/GetTripSumResponse")]
-        System.Threading.Tasks.Task<double> GetTripSumAsync(ClientTest.GeoServiceReference.Region r);
+        System.Threading.Tasks.Task<decimal> GetTripSumAsync(double l, double t, double r, double b);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGeoService/UpdateTripData", ReplyAction="http://tempuri.org/IGeoService/UpdateTripDataResponse")]
         void UpdateTripData(ClientTest.GeoServiceReference.TripData data);
@@ -314,28 +194,28 @@ namespace ClientTest.GeoServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public int GetTripCountInTime(ulong epoch) {
+        public int GetTripCountInTime(string epoch) {
             return base.Channel.GetTripCountInTime(epoch);
         }
         
-        public System.Threading.Tasks.Task<int> GetTripCountInTimeAsync(ulong epoch) {
+        public System.Threading.Tasks.Task<int> GetTripCountInTimeAsync(string epoch) {
             return base.Channel.GetTripCountInTimeAsync(epoch);
         }
         
-        public int GetTripCountInRegion(ClientTest.GeoServiceReference.Region r) {
-            return base.Channel.GetTripCountInRegion(r);
+        public int GetTripCountInRegion(double l, double t, double r, double b) {
+            return base.Channel.GetTripCountInRegion(l, t, r, b);
         }
         
-        public System.Threading.Tasks.Task<int> GetTripCountInRegionAsync(ClientTest.GeoServiceReference.Region r) {
-            return base.Channel.GetTripCountInRegionAsync(r);
+        public System.Threading.Tasks.Task<int> GetTripCountInRegionAsync(double l, double t, double r, double b) {
+            return base.Channel.GetTripCountInRegionAsync(l, t, r, b);
         }
         
-        public double GetTripSum(ClientTest.GeoServiceReference.Region r) {
-            return base.Channel.GetTripSum(r);
+        public decimal GetTripSum(double l, double t, double r, double b) {
+            return base.Channel.GetTripSum(l, t, r, b);
         }
         
-        public System.Threading.Tasks.Task<double> GetTripSumAsync(ClientTest.GeoServiceReference.Region r) {
-            return base.Channel.GetTripSumAsync(r);
+        public System.Threading.Tasks.Task<decimal> GetTripSumAsync(double l, double t, double r, double b) {
+            return base.Channel.GetTripSumAsync(l, t, r, b);
         }
         
         public void UpdateTripData(ClientTest.GeoServiceReference.TripData data) {

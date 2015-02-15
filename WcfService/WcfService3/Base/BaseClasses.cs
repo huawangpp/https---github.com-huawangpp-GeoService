@@ -10,8 +10,16 @@ using System.ServiceModel.Web;
 namespace Uber.Base
 {
     [DataContract]
-    public struct Location
+    public class Location
     {
+        public Location() {}
+        
+        public Location(double lat, double lng)
+        {
+            this.lat = lat;
+            this.lng = lng;
+        }
+
         [DataMember]
         public double lat
         {
@@ -30,15 +38,39 @@ namespace Uber.Base
     [DataContract]
     public class Region
     {
+        public Region() { }
+
+        public Region(double left, double top, double right, double bottom)
+        {
+            this.top = top;
+            this.left = left;
+            this.bottom = bottom;
+            this.right = right;
+        }
+
         [DataMember]
-        public Location topleft
+        public double top
         {
             get;
             set;
         }
 
         [DataMember]
-        public Location bottomright
+        public double left
+        {
+            get;
+            set;
+        }
+
+        [DataMember]
+        public double bottom
+        {
+            get;
+            set;
+        }
+
+        [DataMember]
+        public double right
         {
             get;
             set;
@@ -53,9 +85,21 @@ namespace Uber.Base
         public bool Contains(double lat, double lng)
         {
             // NOTE: need to check whether how the calulation should be and whether projection is needed
-            return lat <= topleft.lat && lat >= bottomright.lat && lng >= topleft.lng && lng <= bottomright.lng;
+            return lat <= right && lat >= left && lng >= top && lng <= bottom;
         }
 
+        /// <summary>
+        /// Check whether the region intersects
+        /// </summary>
+        /// <param name="r"></param>
+        /// <returns></returns>
+        public bool Intersect(Region r)
+        {
+            return !(r.left > this.right ||
+                    r.right < this.left ||
+                    r.top > this.bottom ||
+                    r.bottom < this.top);
+        }
     }
 
     [DataContract]

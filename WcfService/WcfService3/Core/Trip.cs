@@ -8,28 +8,47 @@ using Uber.Base;
 namespace Uber.Core
 {
     public class Trip
-    {
-        private List<TreeNode> treeNodeList = new List<TreeNode>();
+    {        
+        private List<Location> locations = new List<Location>();
+        private Location start, end;
 
-        private List<List<Location>> locationList = new List<List<Location>>();
+        public List<Location> Locations
+        {
+            get
+            {
+                return this.locations;
+            }
+        }
 
+        public Location Start
+        {
+            get
+            {
+                return this.start;
+            }
+        }
+
+        public Location End
+        {
+            get
+            {
+                return this.end;
+            }
+        }
+        
         public decimal Fare
         {
             get;
             set;
         }
 
-        public void AddToTreeNodeList(TreeNode node)
+        public void AddToLocationList(double lat, double lng, string eventType)
         {
-            if (!this.treeNodeList.Contains(node))
-            {
-                this.treeNodeList.Add(node);
-            }
-        }
+            Location l = new Location(lat, lng);
+            locations.Add(l);
 
-        public void AddToLocationList(Location loc)
-        {
-            
+            if (eventType == "begin") this.start = l;
+            else if (eventType == "end") this.end = l;
         }
     }
 }

@@ -14,15 +14,19 @@ namespace Uber
     public interface IGeoService
     {
         [OperationContract]
-        int GetTripCountInTime(ulong epoch);
+        [WebInvoke(UriTemplate = "TripCountInTime/{epoch}", Method = "GET", ResponseFormat=WebMessageFormat.Json)]
+        int GetTripCountInTime(string epoch);
         
         [OperationContract]
-        int GetTripCountInRegion(Base.Region r);
+        [WebInvoke(UriTemplate = "TripCount?l={l}&t={t}&r={r}&b={b}", Method = "GET", ResponseFormat = WebMessageFormat.Json)]
+        int GetTripCountInRegion(double l, double t, double r, double b);
         
         [OperationContract]
-        double GetTripSum(Base.Region r);        
+        [WebInvoke(UriTemplate = "TripSum?l={l}&t={t}&r={r}&b={b}", Method = "GET", ResponseFormat = WebMessageFormat.Json)]
+        decimal GetTripSum(double l, double t, double r, double b);        
 
         [OperationContract]
+        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         void UpdateTripData(TripData data);
     }
 }

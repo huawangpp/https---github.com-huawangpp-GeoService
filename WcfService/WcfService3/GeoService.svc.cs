@@ -22,19 +22,36 @@ namespace Uber
             this.trips.UpdateTrip(data);
         }
 
-        public int GetTripCountInTime(ulong epoch)
+        /// <summary>
+        /// Get the number of trips at a given time
+        /// </summary>
+        /// <param name="epoch"></param>
+        /// <returns></returns>
+        public int GetTripCountInTime(string epoch)
         {
             return this.trips.GetTripCount(epoch);
         }
 
-        public int GetTripCountInRegion(Base.Region r)
+        /// <summary>
+        /// Get the number of trips that passed through a region
+        /// </summary>
+        /// <param name="r"></param>
+        /// <returns></returns>
+        public int GetTripCountInRegion(double l, double t, double r, double b)
         {
-            return 0;
+            Region region = new Region(l, t, r, b);
+            return this.trips.GetTripCountInRegion(region);
         }
 
-        public double GetTripSum(Base.Region r)
+        /// <summary>
+        /// Get the sum of the begin/end trips in a region
+        /// </summary>
+        /// <param name="r"></param>
+        /// <returns></returns>
+        public decimal GetTripSum(double l, double t, double r, double b)
         {
-            return 0.0;
+            Region region = new Region(l, t, r, b);
+            return this.trips.GetTripSum(region);
         }
     }
 }

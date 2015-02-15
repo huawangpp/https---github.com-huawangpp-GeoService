@@ -49,48 +49,5 @@
       <wsdl:output wsaw:Action="http://tempuri.org/IGeoService/UpdateTripDataResponse" message="tns:IGeoService_UpdateTripData_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="BasicHttpBinding_IGeoService" type="tns:IGeoService">
-    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetTripCountInTime">
-      <soap:operation soapAction="http://tempuri.org/IGeoService/GetTripCountInTime" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetTripCountInRegion">
-      <soap:operation soapAction="http://tempuri.org/IGeoService/GetTripCountInRegion" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetTripSum">
-      <soap:operation soapAction="http://tempuri.org/IGeoService/GetTripSum" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateTripData">
-      <soap:operation soapAction="http://tempuri.org/IGeoService/UpdateTripData" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-  </wsdl:binding>
-  <wsdl:service name="GeoService">
-    <wsdl:port name="BasicHttpBinding_IGeoService" binding="tns:BasicHttpBinding_IGeoService">
-      <soap:address location="http://localhost:1292/GeoService.svc" />
-    </wsdl:port>
-  </wsdl:service>
+  <wsdl:service name="GeoService" />
 </wsdl:definitions>
